@@ -1,0 +1,30 @@
+# Framework web
+Flask==2.3.3
+
+# Base de données
+SQLAlchemy==2.0.23
+Flask-SQLAlchemy==3.0.3
+
+# Gestion des dates
+python-dateutil==2.9.0
+
+# Manipulation CSV / Excel
+pandas==2.1.1
+
+# Graphiques
+matplotlib==3.8.0
+seaborn==0.13.2
+
+plotly==5.17.0
+
+# Analyse avancée / Machine Learning
+scikit-learn==1.5.2
+numpy==1.26.4
+scipy==1.11.4
+
+# Interaction avec OpenAI / LLM
+openai==1.29.0
+requests==2.31.0
+
+# Environnement / gestion variables
+python-dotenv==1.0.0
