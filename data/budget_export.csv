@@ -1,0 +1,51 @@
+date,category,amount,first_name,last_name,email
+2025-09-22,Transport,28.26,Rayane,Mtar,rayane@example.com
+2025-09-16,Bills,74.82,Rayane,Mtar,rayane@example.com
+2025-10-02,Bills,140.57,Rayane,Mtar,rayane@example.com
+2025-09-29,Food,13.94,Rayane,Mtar,rayane@example.com
+2025-09-07,Shopping,110.32,Rayane,Mtar,rayane@example.com
+2025-09-13,Food,185.03,Rayane,Mtar,rayane@example.com
+2025-10-06,Bills,58.6,Rayane,Mtar,rayane@example.com
+2025-09-08,Transport,167.01,Rayane,Mtar,rayane@example.com
+2025-09-11,Transport,19.78,Rayane,Mtar,rayane@example.com
+2025-09-16,Shopping,56.24,Rayane,Mtar,rayane@example.com
+2025-09-22,Shopping,42.11,Sarra,Ben Ali,sarra@example.com
+2025-09-22,Transport,189.51,Sarra,Ben Ali,sarra@example.com
+2025-09-17,Food,78.53,Sarra,Ben Ali,sarra@example.com
+2025-09-15,Transport,145.19,Sarra,Ben Ali,sarra@example.com
+2025-09-30,Transport,142.77,Sarra,Ben Ali,sarra@example.com
+2025-10-06,Entertainment,180.48,Sarra,Ben Ali,sarra@example.com
+2025-09-08,Food,191.63,Sarra,Ben Ali,sarra@example.com
+2025-09-08,Bills,15.74,Sarra,Ben Ali,sarra@example.com
+2025-10-04,Bills,165.35,Sarra,Ben Ali,sarra@example.com
+2025-09-14,Bills,188.5,Sarra,Ben Ali,sarra@example.com
+2025-10-05,Transport,67.96,Omar,Trabelsi,omar@example.com
+2025-10-07,Shopping,131.56,Omar,Trabelsi,omar@example.com
+2025-10-03,Bills,171.54,Omar,Trabelsi,omar@example.com
+2025-09-27,Food,179.66,Omar,Trabelsi,omar@example.com
+2025-09-09,Food,22.22,Omar,Trabelsi,omar@example.com
+2025-09-15,Bills,160.68,Omar,Trabelsi,omar@example.com
+2025-10-05,Bills,62.97,Omar,Trabelsi,omar@example.com
+2025-09-21,Food,13.72,Omar,Trabelsi,omar@example.com
+2025-09-12,Food,17.47,Omar,Trabelsi,omar@example.com
+2025-09-07,Food,12.73,Omar,Trabelsi,omar@example.com
+2025-09-09,Food,83.89,Mariem,Jaziri,mariem@example.com
+2025-09-23,Shopping,88.86,Mariem,Jaziri,mariem@example.com
+2025-10-06,Bills,110.37,Mariem,Jaziri,mariem@example.com
+2025-09-23,Transport,98.55,Mariem,Jaziri,mariem@example.com
+2025-09-18,Transport,193.25,Mariem,Jaziri,mariem@example.com
+2025-09-10,Bills,29.67,Mariem,Jaziri,mariem@example.com
+2025-10-05,Entertainment,65.91,Mariem,Jaziri,mariem@example.com
+2025-09-29,Transport,48.54,Mariem,Jaziri,mariem@example.com
+2025-10-03,Shopping,191.25,Mariem,Jaziri,mariem@example.com
+2025-09-12,Entertainment,63.42,Mariem,Jaziri,mariem@example.com
+2025-09-22,Bills,81.86,Ahmed,Zitoun,ahmed@example.com
+2025-09-24,Transport,128.2,Ahmed,Zitoun,ahmed@example.com
+2025-09-28,Food,105.62,Ahmed,Zitoun,ahmed@example.com
+2025-09-07,Shopping,130.39,Ahmed,Zitoun,ahmed@example.com
+2025-09-26,Bills,58.38,Ahmed,Zitoun,ahmed@example.com
+2025-10-03,Bills,45.53,Ahmed,Zitoun,ahmed@example.com
+2025-10-01,Transport,71.76,Ahmed,Zitoun,ahmed@example.com
+2025-09-11,Entertainment,41.49,Ahmed,Zitoun,ahmed@example.com
+2025-09-09,Shopping,148.7,Ahmed,Zitoun,ahmed@example.com
+2025-10-06,Transport,59.85,Ahmed,Zitoun,ahmed@example.com
