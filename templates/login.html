@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartBudgetTracker - Connexion</title>
     <style>
+        <style>
         * {
             margin: 0;
             padding: 0;
@@ -103,6 +104,7 @@
             text-decoration: underline;
         }
     </style>
+    </style>
 </head>
 <body>
     <div class="login-container">
@@ -111,31 +113,23 @@
             <p>Gérez vos finances intelligemment</p>
         </div>
         
-        <form id="loginForm">
+        <form method="POST" action="/login">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="votre@email.com" required>
+                <input type="email" name="email" id="email" placeholder="votre@email.com" required>
             </div>
             
             <div class="form-group">
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" placeholder="Votre mot de passe" required>
+                <input type="password" name="password" id="password" placeholder="Votre mot de passe" required>
             </div>
             
             <button type="submit" class="btn">Se connecter</button>
         </form>
         
         <div class="signup-link">
-            <p>Pas encore de compte? <a href="sign_up.html">S'inscrire</a></p>
+            <p>Pas encore de compte? <a href="/register">S'inscrire</a></p>
         </div>
     </div>
-
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Redirection vers la page d'accueil après connexion
-            window.location.href = 'acceuil.html';
-        });
-    </script>
 </body>
 </html>
