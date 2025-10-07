@@ -5,342 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartBudgetTracker - Créer un Compte</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        
         .signup-container {
-            background-color: white;
+            background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             width: 100%;
             max-width: 450px;
             padding: 40px;
-            overflow-y: auto;
-            max-height: 90vh;
         }
-        
-        .logo {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .logo h1 {
-            color: #2575fc;
-            font-size: 28px;
-        }
-        
-        .logo p {
-            color: #666;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 500;
-        }
-        
+        .signup-container h1 { color: #2575fc; text-align: center; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 500; color: #333; }
         .form-group input, .form-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border 0.3s;
+            width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd; font-size: 16px;
         }
-        
-        .form-group input:focus, .form-group select:focus {
-            border-color: #2575fc;
-            outline: none;
-        }
-        
-        .name-fields {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        
-        .password-requirements {
-            font-size: 12px;
-            color: #666;
-            margin-top: 5px;
-        }
-        
         .btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: opacity 0.3s;
+            width: 100%; padding: 12px; background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white; font-weight: 600; border: none; border-radius: 5px; cursor: pointer;
             margin-top: 10px;
         }
-        
-        .btn:hover {
-            opacity: 0.9;
-        }
-        
-        .login-link {
-            text-align: center;
-            margin-top: 20px;
-            color: #666;
-        }
-        
-        .login-link a {
-            color: #2575fc;
-            text-decoration: none;
-        }
-        
-        .login-link a:hover {
-            text-decoration: underline;
-        }
-        
-        .terms {
-            display: flex;
-            align-items: flex-start;
-            margin-top: 15px;
-        }
-        
-        .terms input {
-            margin-right: 10px;
-            margin-top: 3px;
-        }
-        
-        .terms label {
-            font-size: 14px;
-            color: #666;
-        }
-        
-        .terms a {
-            color: #2575fc;
-            text-decoration: none;
-        }
-        
-        .terms a:hover {
-            text-decoration: underline;
-        }
-        
-        .error-message {
-            color: #e74c3c;
-            font-size: 14px;
-            margin-top: 5px;
-            display: none;
-        }
-        
-        .success-message {
-            color: #27ae60;
-            font-size: 14px;
-            margin-top: 5px;
-            display: none;
-        }
-        
-        @media (max-height: 700px) {
-            .signup-container {
-                padding: 20px;
-            }
-        }
+        .btn:hover { opacity: 0.9; }
+        .error { color: #e74c3c; font-size: 14px; display: none; margin-top: 3px; }
+        .success { color: #27ae60; font-size: 14px; display: none; margin-top: 3px; }
+        .login-link { text-align: center; margin-top: 15px; color: #666; }
+        .login-link a { color: #2575fc; text-decoration: none; }
     </style>
 </head>
 <body>
-    <form id="signupForm" action="/register" method="POST">
-
     <div class="signup-container">
-        <div class="logo">
-            <h1>SmartBudgetTracker</h1>
-            <p>Créez votre compte pour gérer vos finances</p>
-        </div>
-        
-        <form id="signupForm">
-            <div class="name-fields">
-                <div class="form-group">
-                    <label for="firstName">Prénom</label>
-                    <input type="text" id="firstName" placeholder="Votre prénom" required>
-                    <div class="error-message" id="firstNameError">Veuillez entrer un prénom valide</div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="lastName">Nom</label>
-                    <input type="text" id="lastName" placeholder="Votre nom" required>
-                    <div class="error-message" id="lastNameError">Veuillez entrer un nom valide</div>
-                </div>
-            </div>
-            
+        <h1>Créer un Compte</h1>
+        <form id="signupForm" action="/register" method="POST">
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="votre@email.com" required>
-                <div class="error-message" id="emailError">Veuillez entrer une adresse email valide</div>
+                <label>Prénom</label>
+                <input type="text" name="first_name" id="first_name" required>
+                <div class="error" id="first_name_error">Le prénom doit avoir au moins 2 caractères.</div>
             </div>
-            
             <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <input type="password" id="password" placeholder="Créez un mot de passe" required>
-                <div class="password-requirements">
-                    Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule et un chiffre.
-                </div>
-                <div class="error-message" id="passwordError">Le mot de passe ne respecte pas les exigences de sécurité</div>
+                <label>Nom</label>
+                <input type="text" name="last_name" id="last_name" required>
+                <div class="error" id="last_name_error">Le nom doit avoir au moins 2 caractères.</div>
             </div>
-            
             <div class="form-group">
-                <label for="confirmPassword">Confirmer le mot de passe</label>
-                <input type="password" id="confirmPassword" placeholder="Confirmez votre mot de passe" required>
-                <div class="error-message" id="confirmPasswordError">Les mots de passe ne correspondent pas</div>
+                <label>Email</label>
+                <input type="email" name="email" id="email" required>
+                <div class="error" id="email_error">Email invalide.</div>
             </div>
-            
             <div class="form-group">
-                <label for="currency">Devise préférée</label>
-                <select id="currency" required>
-                    <option value="">Sélectionnez une devise</option>
-                    <option value="EUR">Euro (€)</option>
-                    <option value="USD">Dollar US ($)</option>
-                    <option value="GBP">Livre Sterling (£)</option>
-                    <option value="JPY">Yen Japonais (¥)</option>
-                    <option value="CAD">Dollar Canadien ($)</option>
-                    <option value="CHF">Franc Suisse (CHF)</option>
-                    <option value="other">Autre</option>
+                <label>Mot de passe</label>
+                <input type="password" name="password" id="password" required>
+                <div class="error" id="password_error">Mot de passe doit contenir 8 caractères, majuscule, minuscule et chiffre.</div>
+            </div>
+            <div class="form-group">
+                <label>Devise</label>
+                <select name="currency" id="currency" required>
+                    <option value="">Sélectionner</option>
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
                 </select>
+                <div class="error" id="currency_error">Veuillez choisir une devise.</div>
             </div>
-            
             <div class="form-group">
-                <label for="monthlyBudget">Budget mensuel initial (optionnel)</label>
-                <input type="number" id="monthlyBudget" placeholder="0.00" step="0.01" min="0">
+                <label>Budget mensuel</label>
+                <input type="number" name="monthly_budget" id="monthly_budget" step="0.01" required>
             </div>
-            
-            <div class="terms">
-                <input type="checkbox" id="terms" required>
-                <label for="terms">J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de confidentialité</a></label>
-            </div>
-            <div class="error-message" id="termsError">Vous devez accepter les conditions d'utilisation</div>
-            
-            <button type="submit" class="btn">Créer mon compte</button>
-            
-            <div class="success-message" id="successMessage">Compte créé avec succès! Redirection en cours...</div>
+            <button type="submit" class="btn">S'inscrire</button>
+            <div class="success" id="success_message">Compte créé avec succès ! Redirection...</div>
         </form>
-        
         <div class="login-link">
-            <p>Déjà un compte? <a href="login.html">Se connecter</a></p>
+            <p>Déjà un compte ? <a href="login.html">Se connecter</a></p>
         </div>
     </div>
-    </form>
+
     <script>
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Réinitialiser les messages d'erreur
-            const errorMessages = document.querySelectorAll('.error-message');
-            errorMessages.forEach(msg => {
-                msg.style.display = 'none';
-            });
-            
-            let isValid = true;
-            
-            // Validation du prénom
-            const firstName = document.getElementById('firstName').value.trim();
-            if (firstName.length < 2) {
-                document.getElementById('firstNameError').style.display = 'block';
-                isValid = false;
+        const form = document.getElementById('signupForm');
+        form.addEventListener('submit', function(e) {
+            let valid = true;
+
+            // reset errors
+            document.querySelectorAll('.error').forEach(el => el.style.display='none');
+
+            // first_name
+            const first_name = document.getElementById('first_name').value.trim();
+            if(first_name.length < 2) { 
+                document.getElementById('first_name_error').style.display='block'; valid=false; 
             }
-            
-            // Validation du nom
-            const lastName = document.getElementById('lastName').value.trim();
-            if (lastName.length < 2) {
-                document.getElementById('lastNameError').style.display = 'block';
-                isValid = false;
+
+            // last_name
+            const last_name = document.getElementById('last_name').value.trim();
+            if(last_name.length < 2) { 
+                document.getElementById('last_name_error').style.display='block'; valid=false; 
             }
-            
-            // Validation de l'email
+
+            // email
             const email = document.getElementById('email').value;
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                document.getElementById('emailError').style.display = 'block';
-                isValid = false;
+            if(!emailRegex.test(email)) { 
+                document.getElementById('email_error').style.display='block'; valid=false; 
             }
-            
-            // Validation du mot de passe
+
+            // password
             const password = document.getElementById('password').value;
             const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-            if (!passwordRegex.test(password)) {
-                document.getElementById('passwordError').style.display = 'block';
-                isValid = false;
+            if(!passwordRegex.test(password)) { 
+                document.getElementById('password_error').style.display='block'; valid=false; 
             }
-            
-            // Validation de la confirmation du mot de passe
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            if (password !== confirmPassword) {
-                document.getElementById('confirmPasswordError').style.display = 'block';
-                isValid = false;
-            }
-            
-            // Validation de la devise
+
+            // currency
             const currency = document.getElementById('currency').value;
-            if (!currency) {
-                // On pourrait ajouter un message d'erreur pour la devise si nécessaire
-                isValid = false;
+            if(currency === "") { 
+                document.getElementById('currency_error').style.display='block'; valid=false; 
             }
-            
-            // Validation des conditions
-            const terms = document.getElementById('terms').checked;
-            if (!terms) {
-                document.getElementById('termsError').style.display = 'block';
-                isValid = false;
-            }
-            
-            // Si le formulaire est valide
-            if (isValid) {
-                // Afficher le message de succès
-                document.getElementById('successMessage').style.display = 'block';
-                
-                // Simuler l'envoi des données au serveur
-                setTimeout(function() {
-                    // Redirection vers la page de connexion après création du compte
-                    window.location.href = 'login.html';
-                }, 2000);
-            }
-        });
-        
-        // Validation en temps réel pour améliorer l'expérience utilisateur
-        document.getElementById('password').addEventListener('input', function() {
-            const password = this.value;
-            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-            
-            if (password.length > 0 && !passwordRegex.test(password)) {
-                document.getElementById('passwordError').style.display = 'block';
-            } else {
-                document.getElementById('passwordError').style.display = 'none';
-            }
-        });
-        
-        document.getElementById('confirmPassword').addEventListener('input', function() {
-            const password = document.getElementById('password').value;
-            const confirmPassword = this.value;
-            
-            if (confirmPassword.length > 0 && password !== confirmPassword) {
-                document.getElementById('confirmPasswordError').style.display = 'block';
-            } else {
-                document.getElementById('confirmPasswordError').style.display = 'none';
-            }
+
+            if(!valid) e.preventDefault();
+            else document.getElementById('success_message').style.display='block';
         });
     </script>
 </body>

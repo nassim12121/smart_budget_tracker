@@ -14,7 +14,7 @@ with app.app_context():
     if not User.query.filter_by(email=email).first():
         new_user = User(
             first_name="John",
-            last_name="Doe",
+            last_name="nassim",
             email=email,
             password=generate_password_hash("Password123", method="pbkdf2:sha256"),
             currency="EUR",
@@ -31,14 +31,18 @@ def home():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        first_name = request.form['firstName']
-        last_name = request.form['lastName']
+        # استلام البيانات من الفورم
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
         email = request.form['email']
         password = request.form['password']
         currency = request.form['currency']
-        monthly_budget = request.form.get('monthlyBudget', 0.0)
+        monthly_budget = request.form.get('monthly_budget', 0.0)
 
-        hashed_password = generate_password_hash(password, method='sha256')
+        # عمل hash لكلمة السر
+        hashed_password = generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)
+
+        # إنشاء مستخدم جديد
         new_user = User(
             first_name=first_name,
             last_name=last_name,
@@ -47,10 +51,15 @@ def register():
             currency=currency,
             monthly_budget=monthly_budget
         )
+
+        # إضافة المستخدم للقاعدة وحفظ التغييرات
         db.session.add(new_user)
         db.session.commit()
+
+        # إعادة التوجيه لصفحة تسجيل الدخول
         return redirect(url_for('login'))
 
+    # إذا طريقة الطلب GET، عرض صفحة التسجيل
     return render_template('sign_up.html')
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -68,10 +77,11 @@ def login():
 
 @app.route('/dashboard/<int:user_id>')
 def dashboard(user_id):
-    user = User.query.get(user_id)
+    user = User.query.get(user_id)  # جلب بيانات المستخدم بالـID
     if not user:
-        return "Utilisateur non trouvé", 404
+        return "User not found!", 404
     return render_template('acceuil.html', user=user)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
