@@ -10,16 +10,6 @@ Transport    399.30
 
 - Daily average: 102.57
 - Highest spending day: 2025-09-19 with amount 268.12
-- Lowest spending day: 2025-10-07 with amount 14.98
-- Average per category:
-category
-Bills        153.190000
-Food          76.730000
-Shopping      97.956667
-Transport     79.860000
-
-- Total spent: 923.09 / Budget: 1000.00 (✅ Under budget)
-
-- Tips:
-You're on track! Keep monitoring your spending.
-Consider saving a portion of your remaining budget.
+- Monthly budget: 1000.00
+- Current cumulative spending: 923.09
+- Remaining budget: 76.91

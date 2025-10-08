@@ -1,11 +1,11 @@
-date,category,amount
-2025-09-24 14:06:33.220965,Transport,180.22
-2025-10-05 14:06:33.224966,Shopping,25.75
-2025-09-29 14:06:33.224966,Transport,38.63
-2025-09-19 14:06:33.224966,Shopping,104.61
-2025-10-02 14:06:33.224966,Transport,135.99
-2025-09-30 14:06:33.224966,Bills,153.19
-2025-09-19 14:06:33.224966,Shopping,163.51
-2025-09-24 14:06:33.224966,Food,76.73
-2025-10-07 14:06:33.224966,Transport,14.98
-2025-10-03 14:06:33.224966,Transport,29.48
+date,category,amount,first_name,last_name,email,monthly_budget
+2025-09-24 14:06:33.220965,Transport,180.22,Sarra,Ben Ali,sarra@example.com,1000.0
+2025-10-05 14:06:33.224966,Shopping,25.75,Sarra,Ben Ali,sarra@example.com,1000.0
+2025-09-29 14:06:33.224966,Transport,38.63,Sarra,Ben Ali,sarra@example.com,1000.0
+2025-09-19 14:06:33.224966,Shopping,104.61,Sarra,Ben Ali,sarra@example.com,1000.0
+2025-10-02 14:06:33.224966,Transport,135.99,Sarra,Ben Ali,sarra@example.com,1000.0
+2025-09-30 14:06:33.224966,Bills,153.19,Sarra,Ben Ali,sarra@example.com,1000.0
+2025-09-19 14:06:33.224966,Shopping,163.51,Sarra,Ben Ali,sarra@example.com,1000.0
+2025-09-24 14:06:33.224966,Food,76.73,Sarra,Ben Ali,sarra@example.com,1000.0
+2025-10-07 14:06:33.224966,Transport,14.98,Sarra,Ben Ali,sarra@example.com,1000.0
+2025-10-03 14:06:33.224966,Transport,29.48,Sarra,Ben Ali,sarra@example.com,1000.0

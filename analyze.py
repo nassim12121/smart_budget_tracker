@@ -5,7 +5,7 @@ import os
 import plotly.express as px
 import plotly.graph_objects as go
 
-USER_ID = 2  # ID of the user to analyze
+USER_ID = 3  # ID of the user to analyze
 
 with app.app_context():
     # Fetch expenses for the selected user
@@ -52,15 +52,19 @@ daily_avg = daily_sum.mean()
 max_day = daily_sum.idxmax()
 max_amount = daily_sum.max()
 cumulative = daily_sum.sort_index().cumsum()
+remaining_budget = monthly_budget - cumulative.iloc[-1]
 
 # === Create folders ===
-os.makedirs("data", exist_ok=True)
-os.makedirs("graphs", exist_ok=True)
+user_folder = f"data/user_{USER_ID}"
+os.makedirs(user_folder, exist_ok=True)
+graphs_folder = os.path.join(user_folder, "graphs")
+os.makedirs(graphs_folder, exist_ok=True)
 
-# === Save CSV and summary ===
-csv_path = f"data/user_{USER_ID}_expenses.csv"
+# === Save CSV ===
+csv_path = os.path.join(user_folder, "expenses.csv")
 df.to_csv(csv_path, index=False)
 
+# === Generate summary ===
 summary = f"""
 Expense summary for user {df['first_name'].iloc[0]} {df['last_name'].iloc[0]}:
 
@@ -71,9 +75,9 @@ Expense summary for user {df['first_name'].iloc[0]} {df['last_name'].iloc[0]}:
 - Highest spending day: {max_day.date()} with amount {max_amount:.2f}
 - Monthly budget: {monthly_budget:.2f}
 - Current cumulative spending: {cumulative.iloc[-1]:.2f}
-- Remaining budget: {monthly_budget - cumulative.iloc[-1]:.2f}
+- Remaining budget: {remaining_budget:.2f}
 """
-summary_path = f"data/user_{USER_ID}_summary.txt"
+summary_path = os.path.join(user_folder, "summary.txt")
 with open(summary_path, "w", encoding="utf-8") as f:
     f.write(summary)
 
@@ -85,17 +89,17 @@ print(summary)
 # Bar chart: Expenses by Category
 fig_bar = px.bar(category_totals, x=category_totals.index, y=category_totals.values,
                  labels={'x':'Category', 'y':'Amount'}, title="Expenses by Category")
-fig_bar.write_html(f"graphs/user_{USER_ID}_category.html", include_plotlyjs='cdn')
+fig_bar.write_html(os.path.join(graphs_folder, f"user_{USER_ID}_category.html"), include_plotlyjs='cdn')
 
 # Line chart: Daily Expenses
 fig_line = px.line(x=daily_sum.index, y=daily_sum.values, markers=True,
                    labels={'x':'Date', 'y':'Amount'}, title="Daily Expenses")
-fig_line.write_html(f"graphs/user_{USER_ID}_daily.html", include_plotlyjs='cdn')
+fig_line.write_html(os.path.join(graphs_folder, f"user_{USER_ID}_daily.html"), include_plotlyjs='cdn')
 
 # Pie chart: Expense Distribution
 fig_pie = px.pie(names=category_totals.index, values=category_totals.values,
                  title="Expense Distribution by Category")
-fig_pie.write_html(f"graphs/user_{USER_ID}_pie.html", include_plotlyjs='cdn')
+fig_pie.write_html(os.path.join(graphs_folder, f"user_{USER_ID}_pie.html"), include_plotlyjs='cdn')
 
 # Cumulative Spending vs Budget
 fig_budget = go.Figure()
@@ -105,6 +109,6 @@ fig_budget.add_trace(go.Scatter(x=cumulative.index, y=[monthly_budget]*len(cumul
                                 mode='lines', name='Monthly Budget', line=dict(dash='dash', color='red')))
 fig_budget.update_layout(title="Cumulative Expenses vs Monthly Budget",
                          xaxis_title="Date", yaxis_title="Amount")
-fig_budget.write_html(f"graphs/user_{USER_ID}_cumulative_vs_budget.html", include_plotlyjs='cdn')
+fig_budget.write_html(os.path.join(graphs_folder, f"user_{USER_ID}_cumulative_vs_budget.html"), include_plotlyjs='cdn')
 
 print("✅ Plotly interactive graphs generated and saved successfully!")
