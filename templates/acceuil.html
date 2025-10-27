@@ -5,219 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartBudgetTracker - Accueil</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            color: white;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .logo h1 {
-            font-size: 24px;
-        }
-        
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .user-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: white;
-            color: #2575fc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-        
-        .logout-btn {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .logout-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-        
-        .dashboard {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .card h2 {
-            margin-bottom: 20px;
-            color: #2575fc;
-            font-size: 20px;
-        }
-        
-        .budget-total {
-            font-size: 32px;
-            font-weight: bold;
-            color: #2575fc;
-            margin-bottom: 10px;
-        }
-        
-        .budget-details {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15px;
-        }
-        
-        .budget-item {
-            text-align: center;
-        }
-        
-        .budget-item .amount {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        
-        .budget-item .label {
-            font-size: 14px;
-            color: #666;
-        }
-        
-        .expense-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        
-        .form-group {
-            margin-bottom: 15px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 500;
-        }
-        
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        
-        .full-width {
-            grid-column: 1 / span 2;
-        }
-        
-        .btn {
-            padding: 12px 20px;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-        
-        .btn:hover {
-            opacity: 0.9;
-        }
-        
-        .action-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-        
-        .action-btn {
-            flex: 1;
-            margin: 0 10px;
-            padding: 15px;
-            background: white;
-            border: 2px solid #2575fc;
-            color: #2575fc;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .action-btn:hover {
-            background: #2575fc;
-            color: white;
-        }
-        
-        .recent-expenses {
-            margin-top: 30px;
-        }
-        
-        .expense-list {
-            list-style: none;
-        }
-        
-        .expense-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .expense-item:last-child {
-            border-bottom: none;
-        }
-        
-        .expense-category {
-            display: inline-block;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f5f7fa; color: #333; }
+        header { background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: white; padding: 20px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo h1 { font-size: 24px; }
+        .user-info { display: flex; align-items: center; gap: 15px; }
+        .user-avatar { width: 40px; height: 40px; border-radius: 50%; background-color: white; color: #2575fc; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .logout-btn { background: rgba(255, 255, 255, 0.2); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
+        .logout-btn:hover { background: rgba(255, 255, 255, 0.3); }
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        .dashboard { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        .card { background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); }
+        .card h2 { margin-bottom: 20px; color: #2575fc; font-size: 20px; }
+        .budget-total { font-size: 32px; font-weight: bold; color: #2575fc; margin-bottom: 10px; }
+        .budget-details { display: flex; justify-content: space-between; margin-top: 15px; }
+        .budget-item { text-align: center; }
+        .budget-item .amount { font-size: 18px; font-weight: bold; }
+        .budget-item .label { font-size: 14px; color: #666; }
+        .expense-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: #333; font-weight: 500; }
+        .form-group input, .form-group select { width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; }
+        .full-width { grid-column: 1 / span 2; }
+        .btn { padding: 12px 20px; background: linear-gradient(to right, #6a11cb, #2575fc); color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: 600; cursor: pointer; transition: opacity 0.3s; }
+        .btn:hover { opacity: 0.9; }
+        .action-buttons { display: flex; justify-content: space-between; margin-top: 30px; }
+        .action-btn { flex: 1; margin: 0 10px; padding: 15px; background: white; border: 2px solid #2575fc; color: #2575fc; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .action-btn:hover { background: #2575fc; color: white; }
+        .recent-expenses { margin-top: 30px; }
+        .expense-list { list-style: none; }
+        .expense-item { display: flex; justify-content: space-between; padding: 15px; border-bottom: 1px solid #eee; }
+        .expense-item:last-child { border-bottom: none; }
+        .expense-category { display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
         .food { background-color: #ffebee; color: #d32f2f; }
         .entertainment { background-color: #e3f2fd; color: #1976d2; }
         .transport { background-color: #e8f5e9; color: #388e3c; }
@@ -227,122 +47,108 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <h1>SmartBudgetTracker</h1>
-            </div>
-            <div class="user-info">
-                <div class="user-avatar">JD</div>
-                <span>John Doe</span>
-                <button class="logout-btn" onclick="window.location.href='login.html'">Déconnexion</button>
-            </div>
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <h1>SmartBudgetTracker</h1>
         </div>
-    </header>
-    
-    <div class="container">
-        <div class="dashboard">
-            <div class="card">
-                <h2>Budget Total</h2>
-                <div class="budget-total">1 500,00 €</div>
-                <div class="budget-details">
-                    <div class="budget-item">
-                        <div class="amount">1 200,00 €</div>
-                        <div class="label">Dépensé</div>
-                    </div>
-                    <div class="budget-item">
-                        <div class="amount">300,00 €</div>
-                        <div class="label">Restant</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h2>Ajouter une Dépense</h2>
-                <form class="expense-form">
-                    <div class="form-group">
-                        <label for="amount">Montant</label>
-                        <input type="number" id="amount" placeholder="0.00" step="0.01" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="category">Catégorie</label>
-                        <select id="category" required>
-                            <option value="">Sélectionner une catégorie</option>
-                            <option value="food">Nourriture</option>
-                            <option value="entertainment">Divertissement</option>
-                            <option value="transport">Transport</option>
-                            <option value="shopping">Shopping</option>
-                            <option value="bills">Factures</option>
-                            <option value="other">Autre</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="description">Description</label>
-                        <input type="text" id="description" placeholder="Description de la dépense">
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="date">Date</label>
-                        <input type="date" id="date" required>
-                    </div>
-                    
-                    <button type="submit" class="btn full-width">Ajouter la Dépense</button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="action-buttons">
-            <button class="action-btn" onclick="window.location.href='historique.html'">Historique</button>
-            <button class="action-btn" onclick="window.location.href='analyse.html'">Analyse</button>
-            <button class="action-btn" onclick="window.location.href='modifier.html'">Modifier</button>
-        </div>
-        
-        <div class="card recent-expenses">
-            <h2>Dépenses Récentes</h2>
-            <ul class="expense-list">
-                <li class="expense-item">
-                    <div>
-                        <div>Courses alimentaires</div>
-                        <div class="expense-category food">Nourriture</div>
-                    </div>
-                    <div>- 45,30 €</div>
-                </li>
-                <li class="expense-item">
-                    <div>
-                        <div>Cinéma</div>
-                        <div class="expense-category entertainment">Divertissement</div>
-                    </div>
-                    <div>- 24,00 €</div>
-                </li>
-                <li class="expense-item">
-                    <div>
-                        <div>Essence</div>
-                        <div class="expense-category transport">Transport</div>
-                    </div>
-                    <div>- 60,00 €</div>
-                </li>
-                <li class="expense-item">
-                    <div>
-                        <div>Vêtements</div>
-                        <div class="expense-category shopping">Shopping</div>
-                    </div>
-                    <div>- 85,50 €</div>
-                </li>
-            </ul>
+        <div class="user-info">
+            <div class="user-avatar">{{ user.first_name[0]|upper }}{{ user.last_name[0]|upper }}</div>
+            <span>{{ user.first_name }} {{ user.last_name }}</span>
+            <button class="logout-btn" onclick="window.location.href='/logout'">Déconnexion</button>
         </div>
     </div>
+</header>
 
-    <script>
-        document.querySelector('.expense-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Dépense ajoutée avec succès!');
-            // Ici, vous ajouteriez le code pour traiter l'ajout de la dépense
-        });
-        
-        // Définir la date d'aujourd'hui par défaut
-        document.getElementById('date').valueAsDate = new Date();
-    </script>
+<div class="container">
+    <div class="dashboard">
+
+        <!-- BUDGET TOTAL -->
+        <div class="card">
+            <h2>Budget Total</h2>
+            <div class="budget-total">{{ user.monthly_budget }} {{ user.currency }}</div>
+            <div class="budget-details">
+                <div class="budget-item">
+                    <div class="amount">{{ "%.2f"|format(total_spent) }} {{ user.currency }}</div>
+                    <div class="label">Dépensé</div>
+                </div>
+                <div class="budget-item">
+                    <div class="amount">{{ "%.2f"|format(remaining) }} {{ user.currency }}</div>
+                    <div class="label">Restant</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORMULAIRE DEPENSE -->
+        <div class="card">
+            <h2>Ajouter une Dépense</h2>
+            <form id="addexpense" action="/expense" method="POST">
+                <div class="form-group">
+                    <label for="amount">Montant</label>
+                    <input type="number" id="amount" name="amount" placeholder="0.00" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Catégorie</label>
+                    <select id="category" name="category" required>
+                        <option value="">Sélectionner une catégorie</option>
+                        <option value="food">Nourriture</option>
+                        <option value="entertainment">Divertissement</option>
+                        <option value="transport">Transport</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="bills">Factures</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name="description" placeholder="Description de la dépense">
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <button type="submit" class="btn full-width">Ajouter la Dépense</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- BOUTONS ACTION -->
+    <div class="action-buttons">
+        <button class="action-btn" onclick="window.location.href='historique.html'">Historique</button>
+        <button class="action-btn" onclick="window.location.href='analyse.html'">Analyse</button>
+        <button class="action-btn" onclick="window.location.href='modifier.html'">Modifier</button>
+    </div>
+
+    <!-- DÉPENSES RÉCENTES -->
+    <div class="card recent-expenses">
+        <h2>Dépenses Récentes</h2>
+        <ul class="expense-list">
+            {% for expense in expenses %}
+            <li class="expense-item">
+                <div>
+                    <div>{{ expense.description }}</div>
+                    <div class="expense-category {{ expense.category }}">{{ expense.category|capitalize }}</div>
+                </div>
+                <div>- {{ "%.2f"|format(expense.amount) }} {{ user.currency }}</div>
+            </li>
+            {% else %}
+            <li class="expense-item">
+                <div>Aucune dépense récente.</div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<script>
+    // Définit la date d’aujourd’hui par défaut
+    document.getElementById('date').valueAsDate = new Date();
+</script>
+
 </body>
 </html>

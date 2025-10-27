@@ -4,7 +4,6 @@ from werkzeug.security import generate_password_hash
 from datetime import datetime, timedelta
 import random
 
-# بيانات المستخدمين التجريبية
 users_data = [
     {"first_name": "Rayane", "last_name": "Mtar", "email": "rayane@example.com", "password": "1234", "monthly_budget": 1200, "currency": "TND"},
     {"first_name": "Sarra", "last_name": "Ben Ali", "email": "sarra@example.com", "password": "1234", "monthly_budget": 1000, "currency": "TND"},
@@ -17,7 +16,6 @@ users_data = [
 categories = ["Food", "Transport", "Shopping", "Bills", "Entertainment"]
 
 with app.app_context():
-    # إنشاء المستخدمين
     users = []
     for u in users_data:
         if not User.query.filter_by(email=u["email"]).first():
@@ -34,7 +32,7 @@ with app.app_context():
             users.append(user)
     db.session.commit()
 
-    # إنشاء مصاريف عشوائية لكل مستخدم
+
     for user in users:
         for _ in range(10):
             expense = Expense(
